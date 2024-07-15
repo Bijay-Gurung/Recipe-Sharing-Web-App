@@ -22,7 +22,7 @@ function Dha(){
     return(
         <div className="dha">
             <p>Don't have an account</p>
-            <a href="/src/Signup.js" alt="signup">Signup</a>
+            <a href="#" alt="signup">Signup</a>
         </div>
     );
 }

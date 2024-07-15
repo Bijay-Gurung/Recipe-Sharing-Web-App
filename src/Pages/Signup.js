@@ -1,5 +1,5 @@
 import React from "react";
-// import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import './Signup.css';
 
 function Field(){
@@ -8,9 +8,9 @@ function Field(){
             {/* <label for="username"><FontAwesomeIcon icon="fa-solid fa-user" /></label> */}
             <input type="text" id="username" name="username" placeholder="Username"></input>
             <br></br>
-            <input type="email" id="email" name="email" placeholder="Mail"></input>
+            <input type="email" id="email" placeholder="Mail"></input>
             <br></br>
-            <input type="password" id="password" name="password" placeholder="Password"></input>
+            <input type="password" id="password" placeholder="Password"></input>
         </div>
     );
 }
@@ -25,7 +25,7 @@ function Aha(){
     return(
         <div className="aha">
             <p>Already have an account</p>
-            <a href="/src/Login.js" alt="login">Login</a>
+            <a href="#" alt="login">Login</a>
         </div>
     );
 }
