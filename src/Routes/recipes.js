@@ -7,8 +7,8 @@ router.post('/', async (req, res) => {
     try {
         const recipe = new Recipe(req.body);
         await recipe.save();
-        console.log('Recipe saved:', recipe); // Log the saved recipe
-        res.status(201).json(recipe); // Return the created recipe
+        console.log('Recipe saved:', recipe);
+        res.status(201).json(recipe);
     } catch (error) {
         console.error('Error saving recipe:', error);
         res.status(400).json({ message: 'Error saving recipe', error: error.message });
