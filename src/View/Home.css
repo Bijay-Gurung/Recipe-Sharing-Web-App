@@ -1,0 +1,190 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+
+body{
+    background: linear-gradient(180deg, #FFEB8A 0%, #AFB638 36.35%, #386050 100%);
+    height: 742px;
+}
+
+.nav{
+    display: flex;
+    height: 50px;
+    width: 100%;
+    padding-top: 10px;
+    background-color: #ffffff05;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(25px);
+    justify-content: space-between;
+    border: none;
+}
+.nav a{
+    color: #6A4104;
+    text-decoration: none;
+}
+.nav .home{
+    margin-left: 20px;
+}
+
+.nav .logo{
+    height: 30px;
+    width: 40px;
+    border-radius: 90px;
+    background-image: url("/public/Recipe Logo.png");
+    background-position: center;
+    background-size: cover;
+    margin-left: 40px;
+}
+.nav button{
+    height: 30px;
+    width: 60px;
+    color: #fff;
+    background-color: #386050;
+    border-radius: 9px;
+    border: none;
+    margin-right: 290px;
+}
+
+.GroceryList{
+    height: 190px;
+    width: 60%;
+    background-color: #ffffff05;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(25px);
+    box-shadow: 2px 2px 10px 1px #333333;
+    border-radius: 9px;
+    position: relative;
+    top: 90px;
+    left: 230px;
+    display: flex;
+}
+.GroceryList .Left{
+    width: 60%;
+}
+.GroceryList .Right{
+    width: 40%;
+    color: #fff;
+}
+
+.GroceryList .Right h1{
+    padding-top: 20px;
+}
+.GroceryList .Right p{
+    padding-top: 5px;
+    padding-left: 10px;
+}
+
+.GroceryList .Right button{
+    border: none;
+    background-color: #386050;
+    color: #fff;
+    border-radius: 6px;
+    height: 30px;
+    width: 90px;
+    margin-top: 17px;
+    margin-left: 47px;
+}
+
+.Categories{
+    height: 200px;
+    width: 70%;
+    position: relative;
+    top: 160px;
+    left: 160px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.Categories .breakfast{
+    height: 180px;
+    width: 150px;
+    background-color: #fff;
+    border-radius: 9px;
+}
+
+.Categories .meal{
+    height: 180px;
+    width: 150px;
+    background-color: #fff;
+    border-radius: 9px;
+}
+
+.Categories .dinner{
+    height: 180px;
+    width: 150px;
+    background-color: #fff;
+    border-radius: 9px;
+}
+
+.Categories .dessert{
+    height: 180px;
+    width: 150px;
+    background-color: #fff;
+    border-radius: 9px;
+}
+
+.Categories h3{
+    text-align: center;
+    padding-top: 15px;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.Categories .bimage{
+    height: 50px;
+    width: 50px;
+    border-radius: 90px;
+    background-image: url("/public/garlic butter.jpg");
+    background-position: center;
+    background-size: cover;
+    margin-top: 20px;
+    margin-left: 33%;
+}
+
+.Categories .mimage{
+    height: 50px;
+    width: 50px;
+    border-radius: 90px;
+    background-image: url("/public/meal ten.jpg");
+    background-position: center;
+    background-size: cover;
+    margin-top: 20px;
+    margin-left: 33%;
+}
+
+.Categories .dimage{
+    height: 50px;
+    width: 50px;
+    border-radius: 90px;
+    background-image: url("/public/meal eight.jpg");
+    background-position: center;
+    background-size: cover;
+    margin-top: 20px;
+    margin-left: 33%;
+}
+
+.Categories .deimage{
+    height: 50px;
+    width: 50px;
+    border-radius: 90px;
+    background-image: url("/public/dessert.jpg");
+    background-position: center;
+    background-size: cover;
+    margin-top: 20px;
+    margin-left: 33%;
+}
+
+.Categories button{
+    height: 30px;
+    width: 70px;
+    border-radius: 15px;
+    border: none;
+    background-color: #386050;
+    color: #fff;
+    margin-top: 20px;
+    margin-left: 40px;
+    font-size: x-small;
+}
