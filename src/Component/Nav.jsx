@@ -1,4 +1,7 @@
+import React from 'react';
+
 export default function Nav(){
+    return(
     <div className="nav">
         <div className="logo"></div>
         <a href="" className="home">Home</a>
@@ -7,4 +10,5 @@ export default function Nav(){
         <a href="" className="contactUs">Contact Us</a>
         <button id="login">Login</button>
     </div>
+    );
 }

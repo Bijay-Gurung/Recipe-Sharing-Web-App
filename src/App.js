@@ -1,7 +1,8 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Signup from "./View/Signup";
-import Login from "./View/Login";
+// import { BrowserRouter, Routes, Route } from "react-router-dom";
+// import Signup from "./View/Signup";
+// import Login from "./View/Login";
+import Home from './View/Home';
 
 function App() {
   return (
@@ -13,9 +14,8 @@ function App() {
     //   </Routes>
     //   </BrowserRouter>
     // </div>
-
     <>
-    <Signup/>
+    <Home />
     </>
   );
 }
