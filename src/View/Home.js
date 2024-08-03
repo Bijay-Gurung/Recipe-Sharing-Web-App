@@ -1,5 +1,6 @@
 import React from 'react';
 import Nav from '../Component/Nav';
+import Footer from '../Component/Footer';
 import './Home.css';
 
 function GroceryList(){
@@ -51,6 +52,7 @@ export default function Home() {
             <Nav />
             <GroceryList />
             <Categories />
+            <Footer />
         </div>
     );
 }

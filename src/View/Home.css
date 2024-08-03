@@ -7,7 +7,7 @@
 
 body{
     background: linear-gradient(180deg, #FFEB8A 0%, #AFB638 36.35%, #386050 100%);
-    height: 742px;
+    height: 830px;
 }
 
 .nav{
@@ -16,8 +16,8 @@ body{
     width: 100%;
     padding-top: 10px;
     background-color: #ffffff05;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(25px);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(10px);
     justify-content: space-between;
     border: none;
 }
@@ -92,7 +92,7 @@ body{
     height: 200px;
     width: 70%;
     position: relative;
-    top: 160px;
+    top: 180px;
     left: 160px;
     display: flex;
     justify-content: space-between;
@@ -187,4 +187,49 @@ body{
     margin-top: 20px;
     margin-left: 40px;
     font-size: x-small;
+}
+
+.footer{
+    height: 90px;
+    width: 100%;
+    display: flex;
+    margin-top: 295px;
+    background-color: #ffffff05;
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(10px);
+    color: #fff;
+    justify-content: space-between;
+}
+
+.footer .socialMedia{
+    display: flex;
+}
+
+.footer .chatbot{
+    height: 60px;
+    width: 60px;
+    border-radius: 90px;
+    background-color: #fff;
+    margin-top: 15px;
+    margin-right: 15px;
+}
+
+.footer .ContactUs h3{
+    font-weight: 500;
+    text-decoration: underline;
+}
+.footer .ContactUs{
+    margin-top: 5px;
+    margin-left: 15px;
+}
+
+.footer .copyright{
+    margin-top: 60px;
+}
+
+.footer .other{
+    margin-top: 5px;
+}
+.footer .other p{
+    text-decoration: underline;
 }
