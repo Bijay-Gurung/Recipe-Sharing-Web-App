@@ -1,5 +1,4 @@
 import React from 'react';
-
 export default function Footer(){
     return(
         <div className='footer'>
@@ -12,10 +11,7 @@ export default function Footer(){
             <div className='other'>
                 <p className='aboutUs'>About Us</p>
                 <p className='followUs'>Follow Us</p>
-                <div className='socialMedia'>
-                    <p>Facebook</p>
-                    <p>Instagram</p>
-                </div>
+                <div className='socialMedia'></div>
             </div>
 
             <div className='copyright'>

@@ -1,4 +1,5 @@
 import React from "react";
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 // import { BrowserRouter, Routes, Route } from "react-router-dom";
 // import Signup from "./View/Signup";
 // import Login from "./View/Login";
