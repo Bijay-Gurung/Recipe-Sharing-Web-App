@@ -26,7 +26,7 @@ body{
     text-decoration: none;
 }
 .nav .home{
-    margin-left: 20px;
+    margin-left: 290px;
 }
 
 .nav .logo{
@@ -38,14 +38,16 @@ body{
     background-size: cover;
     margin-left: 40px;
 }
-.nav button{
+.nav .login{
     height: 30px;
     width: 60px;
     color: #fff;
     background-color: #386050;
     border-radius: 9px;
     border: none;
-    margin-right: 290px;
+    margin-right: 410px;
+    position: relative;
+    bottom: 20px;
 }
 
 .GroceryList{
