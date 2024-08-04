@@ -1,7 +1,9 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 
 export default function Nav(){
+    const navigate = useNavigate();
+
     return(
     <div className="nav">
         <div className="logo"></div>
@@ -9,7 +11,7 @@ export default function Nav(){
         <Link to="" className="recipes">Recipes</Link>
         <Link to="about" className="aboutUs">About Us</Link>
         <Link to="" className="contactUs">Contact Us</Link>
-        <button id="login">Login</button>
+        <button id="login" onClick={() => navigate("/login")}>Login</button>
     </div>
     );
 }

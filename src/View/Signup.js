@@ -1,6 +1,7 @@
 import React from "react";
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+// import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import './Signup.css';
+import {Link} from 'react-router-dom';
 
 function Field(){
     return(
@@ -25,7 +26,7 @@ function Aha(){
     return(
         <div className="aha">
             <p>Already have an account</p>
-            <a href="#" alt="login">Login</a>
+            <Link to="login" alt="login">Login</Link>
         </div>
     );
 }

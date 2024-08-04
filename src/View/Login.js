@@ -1,6 +1,7 @@
 import React from "react";
 // import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import './Login.css';
+import {Link} from 'react-router-dom';
 
 function Field(){
     return(
@@ -22,7 +23,7 @@ function Dha(){
     return(
         <div className="dha">
             <p>Don't have an account</p>
-            <a href="#" alt="signup">Signup</a>
+            <Link to="signup" alt="signup">Signup</Link>
         </div>
     );
 }
