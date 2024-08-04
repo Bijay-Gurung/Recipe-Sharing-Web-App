@@ -23,7 +23,7 @@ function Dha(){
     return(
         <div className="dha">
             <p>Don't have an account</p>
-            <Link to="signup" alt="signup">Signup</Link>
+            <Link to="/signup">Signup</Link>
         </div>
     );
 }

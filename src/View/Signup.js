@@ -26,7 +26,7 @@ function Aha(){
     return(
         <div className="aha">
             <p>Already have an account</p>
-            <Link to="login" alt="login">Login</Link>
+            <Link to="/login">Login</Link>
         </div>
     );
 }
