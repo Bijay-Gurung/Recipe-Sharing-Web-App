@@ -26,11 +26,11 @@ function Categories(){
                 <button>Click Here</button>
             </div>
 
-            <div className='meal'>
+            {/* <div className='meal'>
                 <div className='mimage'></div>
                 <h3>Meal</h3>
                 <button>Click Here</button>
-            </div>
+            </div> */}
 
             <div className='dinner'>
                 <div className='dimage'></div>
