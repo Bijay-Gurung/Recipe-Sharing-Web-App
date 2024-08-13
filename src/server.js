@@ -2,13 +2,16 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const recipesRouter = require('./Routes/recipes');
+const cors = require('cors');
 
 const app = express();
 const port = 4000;
 
 // Middleware
 app.use(bodyParser.json());
-
+app.use(cors({
+  origin: "http://localhost:3000",
+}))
 // Routes
 app.use('/recipes', recipesRouter);
 
