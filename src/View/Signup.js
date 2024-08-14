@@ -1,29 +1,63 @@
-import React from "react";
-// import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import React, { useState } from "react";
 import './Signup.css';
-import {Link} from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
-function Field(){
-    return(
-        <div className="fields">
-            {/* <label for="username"><FontAwesomeIcon icon="fa-solid fa-user" /></label> */}
-            <input type="text" id="username" name="username" placeholder="Username"></input>
-            <br></br>
-            <input type="email" id="email" placeholder="Mail"></input>
-            <br></br>
-            <input type="password" id="password" placeholder="Password"></input>
+function Form() {
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const navigate = useNavigate();
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        axios.post("http://localhost:3000/Signup", { name, email, password })
+            .then(result => {
+                console.log(result);
+                navigate("/login");
+            })
+            .catch(err => console.log(err));
+    };
+
+    return (
+        <div className="container">
+            <div className="form">
+                <div className="left"></div>
+                <div className="right">
+                    <form onSubmit={handleSubmit}>
+                        <h1>Signup</h1>
+                        <Field setName={setName} setEmail={setEmail} setPassword={setPassword} />
+                        <ForgotPass />
+                    </form>
+                    <Aha />
+                </div>
+            </div>
         </div>
     );
 }
 
-function ForgotPass(){
-    return(
+function Field({ setName, setEmail, setPassword }) {
+    return (
+        <div className="fields">
+            <input type="text" id="username" name="username" placeholder="Username" onChange={(e) => setName(e.target.value)} />
+            <br />
+            <input type="email" id="email" placeholder="Mail" onChange={(e) => setEmail(e.target.value)} />
+            <br />
+            <input type="password" id="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} />
+            <br />
+            <button type="submit">Signup</button>
+        </div>
+    );
+}
+
+function ForgotPass() {
+    return (
         <p className="forgot">Forgot Password</p>
     );
 }
 
-function Aha(){
-    return(
+function Aha() {
+    return (
         <div className="aha">
             <p>Already have an account</p>
             <Link to="/login">Login</Link>
@@ -31,49 +65,10 @@ function Aha(){
     );
 }
 
-// function Continue(){
-//     return(
-//         <>
-//         <p>____ Countinue With ____</p>
-//         <div className="continue">
-
-//         </div>
-//         </>
-//     )
-// }
-
-function Register(){
-    function Success(){
-        alert("Signup Successfully");
-    }
-    
-    return(
-        <button onClick={Success}>Signup</button>
-    );
-}
-
-function Form(){
-    return(
-        <div className="container">
-        <div className="form">
-            <div className="left"></div>
-
-            <div className="right">
-                <h1>Signup</h1>
-                <Field/>
-                <ForgotPass/>
-                <Register/>
-                <Aha/>
-            </div>
-        </div>
-        </div>
-    );
-}
-
-export default function Signup(){
-    return(
+export default function Signup() {
+    return (
         <>
-        <Form/>
+            <Form />
         </>
     );
 }
