@@ -33,7 +33,7 @@ body{
     height: 30px;
     width: 40px;
     border-radius: 90px;
-    background-image: url("/public/Recipe Logo.png");
+    background-image: url("/Recipe Logo.png");
     background-position: center;
     background-size: cover;
     margin-left: 40px;
@@ -141,7 +141,7 @@ body{
     height: 50px;
     width: 50px;
     border-radius: 90px;
-    background-image: url("/public/garlic butter.jpg");
+    background-image: url("/garlic butter.jpg");
     background-position: center;
     background-size: cover;
     margin-top: 20px;
@@ -152,7 +152,7 @@ body{
     height: 50px;
     width: 50px;
     border-radius: 90px;
-    background-image: url("/public/meal ten.jpg");
+    background-image: url("/meal ten.jpg");
     background-position: center;
     background-size: cover;
     margin-top: 20px;
@@ -163,7 +163,7 @@ body{
     height: 50px;
     width: 50px;
     border-radius: 90px;
-    background-image: url("/public/meal eight.jpg");
+    background-image: url("/meal eight.jpg");
     background-position: center;
     background-size: cover;
     margin-top: 20px;
@@ -174,7 +174,7 @@ body{
     height: 50px;
     width: 50px;
     border-radius: 90px;
-    background-image: url("/public/dessert.jpg");
+    background-image: url("/dessert.jpg");
     background-position: center;
     background-size: cover;
     margin-top: 20px;
