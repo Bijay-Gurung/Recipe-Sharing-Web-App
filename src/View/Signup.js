@@ -11,13 +11,13 @@ function Form() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.post("http://localhost:4000/signups", { name, email, password })
+        axios.post("http://localhost:4000/signups", { userName: name, email, password })
             .then(result => {
                 console.log(result);
                 navigate("/login");
             })
             .catch(err => console.log(err));
-    };
+    };    
 
     return (
         <div className="container">
@@ -40,11 +40,11 @@ function Form() {
 function Field({ setName, setEmail, setPassword }) {
     return (
         <div className="fields">
-            <input type="text" id="username" name="username" placeholder="Username" onChange={(e) => setName(e.target.value)} />
+            <input type="text" id="username" name="username" placeholder="Username" onChange={(e) => setName(e.target.value)} required/>
             <br />
-            <input type="email" id="email" placeholder="Mail" onChange={(e) => setEmail(e.target.value)} />
+            <input type="email" id="email" placeholder="Mail" onChange={(e) => setEmail(e.target.value)} required/>
             <br />
-            <input type="password" id="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} />
+            <input type="password" id="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} required/>
             <br />
         </div>
     );
