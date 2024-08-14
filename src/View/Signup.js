@@ -11,7 +11,7 @@ function Form() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.post("http://localhost:3000/Signup", { name, email, password })
+        axios.post("http://localhost:4000/signups", { name, email, password })
             .then(result => {
                 console.log(result);
                 navigate("/login");
@@ -24,11 +24,12 @@ function Form() {
             <div className="form">
                 <div className="left"></div>
                 <div className="right">
+                    <h1>Signup</h1>
                     <form onSubmit={handleSubmit}>
-                        <h1>Signup</h1>
                         <Field setName={setName} setEmail={setEmail} setPassword={setPassword} />
-                        <ForgotPass />
+                        <button type="submit">Signup</button>
                     </form>
+                    <ForgotPass />
                     <Aha />
                 </div>
             </div>
@@ -45,7 +46,6 @@ function Field({ setName, setEmail, setPassword }) {
             <br />
             <input type="password" id="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} />
             <br />
-            <button type="submit">Signup</button>
         </div>
     );
 }

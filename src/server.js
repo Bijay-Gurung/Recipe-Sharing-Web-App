@@ -11,8 +11,8 @@ const port = 4000;
 // Middleware
 app.use(bodyParser.json());
 app.use(cors({
-  origin: "http://localhost:3000/",
-}))
+  origin: "http://localhost:3000",
+}));
 // Routes
 app.use('/recipes', recipesRouter);
 app.use('/signups', signupRouter);
