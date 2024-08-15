@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const recipesRouter = require('./Routes/recipes');
 const signupRouter = require('./Routes/signups');
+const loginRouter = require('./Routes/login');
 const cors = require('cors');
 
 const app = express();
@@ -16,6 +17,7 @@ app.use(cors({
 // Routes
 app.use('/recipes', recipesRouter);
 app.use('/signups', signupRouter);
+app.use('/login', loginRouter);
 
 // Connect to MongoDB
 mongoose.connect('mongodb://localhost:27017/recipe-sharing')

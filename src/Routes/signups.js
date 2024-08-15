@@ -15,8 +15,6 @@ router.post('/', async (req,res) => {
     }
 });
 
-module.exports = router;
-
 router.get('/', async (req,res) => {
     try{
         const signups = await Signup.find();
@@ -26,3 +24,5 @@ router.get('/', async (req,res) => {
         res.status(500).json({message: 'Error retrieving signup data', error: error.message});
     }
 });
+
+module.exports = router;
