@@ -12,18 +12,17 @@ function Form(){
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        axios.post("http://localhost:4000/signups", { email, password })
+        axios.get("http://localhost:4000/signups", { email, password })
         .then(result => {
-            console.log(result)
+            console.log(result);
             if(result.data === "Success"){
-                navigate("/")
+                navigate("/");
             }else{
-                navigate("/signup")
-                alert("You are not registered to this service")
+                navigate("/signup");
+                alert("You are not registered to this service");
             }
-       
         })
-        .catch(err => console.log(err))
+        .catch(err => console.log(err));
     }
 
     return(
