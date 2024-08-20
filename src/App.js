@@ -4,6 +4,7 @@ import Signup from './View/Signup';
 import Login from './View/Login';
 import Home from './View/Home';
 import About from './View/About';
+import CreateRecipe from './View/AdminCreate';
 import ErrorPage from './View/ErrorPage';
 
 function App() {
@@ -24,6 +25,10 @@ function App() {
     {
       path: '/signup',
       element: <Signup />
+    },
+    {
+      path: '/adminPanel',
+      element: <CreateRecipe />
     }
   ]);
 
