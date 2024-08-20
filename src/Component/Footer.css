@@ -2,7 +2,6 @@
     height: 90px;
     width: 100%;
     display: flex;
-    margin-top: 295px;
     background-color: #ffffff05;
     backdrop-filter: blur(25px);
     -webkit-backdrop-filter: blur(10px);
@@ -33,7 +32,7 @@
 }
 
 .footer .copyright{
-    margin-top: 60px;
+    margin-top: 30px;
 }
 
 .footer .other{
@@ -41,4 +40,7 @@
 }
 .footer .other p{
     text-decoration: underline;
+}
+.aboutUs{
+    color: #fff;
 }

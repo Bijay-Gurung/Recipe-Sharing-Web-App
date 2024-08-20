@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 export default function Footer(){
     return(
         <div className='footer'>
@@ -9,7 +11,7 @@ export default function Footer(){
             </div>
 
             <div className='other'>
-                <p className='aboutUs'>About Us</p>
+                <Link to="/about" className="aboutUs">About Us</Link>
                 <p className='followUs'>Follow Us</p>
                 <div className='socialMedia'></div>
             </div>
@@ -18,7 +20,7 @@ export default function Footer(){
                 <p>@ 2024 Kathmandu Nepal, Inc All right reserved</p>
             </div>
 
-            <div className='chatbot'></div>
+            <div className='none'></div>
         </div>
     );
 }
