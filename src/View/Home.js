@@ -2,6 +2,7 @@ import React from 'react';
 import Nav from '../Component/Nav';
 import Footer from '../Component/Footer';
 import './Home.css';
+import '../Component/Footer.css';
 
 
 function GroceryList(){

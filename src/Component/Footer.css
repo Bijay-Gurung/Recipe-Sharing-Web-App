@@ -1,0 +1,44 @@
+.footer{
+    height: 90px;
+    width: 100%;
+    display: flex;
+    margin-top: 295px;
+    background-color: #ffffff05;
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(10px);
+    color: #fff;
+    justify-content: space-between;
+}
+
+.footer .socialMedia{
+    display: flex;
+}
+
+.footer .chatbot{
+    height: 60px;
+    width: 60px;
+    border-radius: 90px;
+    background-color: #fff;
+    margin-top: 15px;
+    margin-right: 15px;
+}
+
+.footer .ContactUs h3{
+    font-weight: 500;
+    text-decoration: underline;
+}
+.footer .ContactUs{
+    margin-top: 5px;
+    margin-left: 15px;
+}
+
+.footer .copyright{
+    margin-top: 60px;
+}
+
+.footer .other{
+    margin-top: 5px;
+}
+.footer .other p{
+    text-decoration: underline;
+}
