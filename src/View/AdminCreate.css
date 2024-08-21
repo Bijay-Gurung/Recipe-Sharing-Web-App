@@ -4,3 +4,101 @@
     box-sizing: border-box;
     font-family: 'Poppins',sans-serif;
 }
+
+.createRecipe{
+    height: 450px;
+    width: 650px;
+    background-color: #ffffff05;
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(50px);
+    box-shadow: 2px 2px 10px #fff;
+    position: relative;
+    top: 120px;
+    left: 22%;
+    border-radius: 40px;
+}
+
+.createRecipe h1{
+    text-align: center;
+    padding-top: 5px;
+    font-size: x-large;
+    color: #6A4104;
+    font-weight: 500;
+}
+
+.createRecipe #recipe{
+    height: 30px;
+    width: 200px;
+    border-radius: 9px;
+    border: none;
+    margin-top: 30px;
+}
+.createRecipe #recipe::placeholder{
+    color: #000;
+    opacity: 1;
+}
+
+.createRecipe #author{
+    height: 30px;
+    width: 200px;
+    border-radius: 9px;
+    border: none;
+    margin-top: 10px;
+}
+.createRecipe #author::placeholder{
+    color: #000;
+    opacity: 1;
+}
+
+.createRecipe #date{
+    height: 30px;
+    width: 200px;
+    border-radius: 9px;
+    border: none;
+    margin-top: 10px;
+}
+
+.createRecipe #nutInfo{
+    border-radius: 9px;
+    margin-top: 10px;
+}
+
+.createRecipe #process{
+    border-radius: 9px;
+    margin-top: 10px;
+}
+
+.createRecipe #recipeImage{
+    height: 40px;
+    width: 200px;
+    background-color: #fff;
+    border-radius: 9px;
+    padding-top: 10px;
+    padding-left: 8px;
+}
+
+.createRecipe #details{
+    border-radius: 9px;
+    margin-top: 10px;
+}
+
+.createRecipe #ingredient{
+    border-radius: 9px;
+    margin-top: 10px;
+}
+
+.createRecipe button{
+    position: relative;
+    right: 100px;
+}
+
+.createRecipe .left{
+    position: relative;
+    left: 10%;
+}
+
+.createRecipe .right{
+    position: relative;
+    left: 350px;
+    bottom: 350px;
+}
