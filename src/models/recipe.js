@@ -27,6 +27,14 @@ const recipe_Schema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    image: {
+        type: Buffer,
+        required: true,
+    },
+    details: {
+        type: String,
+        required: true,
+    }
 });
 
 // creating new Collection
