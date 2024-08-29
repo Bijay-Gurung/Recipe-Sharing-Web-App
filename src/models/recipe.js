@@ -28,7 +28,7 @@ const recipe_Schema = new mongoose.Schema({
         required: true,
     },
     image: {
-        type: Buffer,
+        type: String,
         required: true,
     },
     details: {

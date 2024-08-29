@@ -18,6 +18,7 @@ app.use(cors({
 app.use('/recipes', recipesRouter);
 app.use('/signups', signupRouter);
 app.use('/login', loginRouter);
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // Connect to MongoDB
 mongoose.connect('mongodb://localhost:27017/recipe-sharing')

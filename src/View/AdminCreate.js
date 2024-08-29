@@ -12,19 +12,35 @@ function Create(){
     const [image, setImage] = useState('');
     const [details, setDetails] = useState('');
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        axios.post("http://localhost:4000/recipes",{recipe, author, date, nutInfo, ingredient, process, image, details})
+        
+        const formData = new FormData();
+        formData.append('recipe', recipe);
+        formData.append('author', author);
+        formData.append('date', date);
+        formData.append('nutInfo', nutInfo);
+        formData.append('ingredient', ingredient);
+        formData.append('process', process);
+        formData.append('image', image);
+        formData.append('details', details);
+    
+        axios.post("http://localhost:4000/recipes", formData, {
+            headers: {
+                'Content-Type': 'multipart/form-data'
+            }
+        })
         .then(result => {
             console.log(result);
         })
         .catch(err => console.log(err));
     }
+    
 
     return(
         <div className="createRecipe">
             <h1>New Recipe</h1>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} encType="multipart/form-data">
                 <div className="left">
                     <input type="text" id="recipe" name="recipe" placeholder="Recipe Name" onChange={(e) => setRecipe(e.target.value)} required /><br/>
                     <input type="text" id="author" name="author" placeholder="Author Name" onChange={(e) => setAuthor(e.target.value)} required /><br/>
@@ -34,7 +50,7 @@ function Create(){
                 </div>
 
                 <div className="right">
-                    <input type="file" id="recipeImage" name="recipeImage" placeholder="Upload Recipe Image" onChange={(e) => setImage(e.target.value)} required /><br/>
+                    <input type="file" id="recipeImage" name="recipeImage" placeholder="Upload Recipe Image" onChange={(e) => setImage(e.target.files[0])} required /><br/>
                     <textarea rows='5' cols='29' id="details" name="details" placeholder="Write your recipe details here" onChange={(e) => setDetails(e.target.value)} required></textarea><br/>
                     <textarea rows='5' cols='29' id="ingredient" name="ingredient" placeholder="Add Ingredient" onChange={(e) => setIngredient(e.target.value)} required></textarea><br/>
                     <button type="submit">Create</button>
