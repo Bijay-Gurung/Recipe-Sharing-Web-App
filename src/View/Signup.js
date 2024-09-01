@@ -20,7 +20,7 @@ function Form() {
                 setTimeout(()=>{
                     setIsLoading(false);
                     navigate("/login");
-                },5000);
+                },2000);
 
             })
             .catch(err => console.log(err));
@@ -28,9 +28,12 @@ function Form() {
 
     return (
         <div className="container">
-            {isLoading ? <ClipLoader size={43} color="black" /> : null}
-
-            <div className="form">
+            {isLoading ? (
+                <div className="loader-container">
+                    <ClipLoader size={43} color="black" />
+                </div>
+            ) : (
+                <div className="form">
                 <div className="left"></div>
                 <div className="right">
                     <h1>Signup</h1>
@@ -42,6 +45,7 @@ function Form() {
                     <Aha />
                 </div>
             </div>
+            )}
         </div>
     );
 }
