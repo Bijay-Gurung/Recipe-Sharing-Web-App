@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import './Signup.css';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import {ClipLoader} from "react-spinners";
 
 function Form() {
+    const [isLoading, setIsLoading] = useState(false);
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -11,16 +13,23 @@ function Form() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        setIsLoading(true);
         axios.post("http://localhost:4000/signups", { userName: name, email, password })
             .then(result => {
                 console.log(result);
-                navigate("/login");
+                setTimeout(()=>{
+                    setIsLoading(false);
+                    navigate("/login");
+                },5000);
+
             })
             .catch(err => console.log(err));
     };    
 
     return (
         <div className="container">
+            {isLoading ? <ClipLoader size={43} color="black" /> : null}
+
             <div className="form">
                 <div className="left"></div>
                 <div className="right">
