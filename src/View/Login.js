@@ -1,67 +1,62 @@
 import React, { useState } from "react";
-// import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import './Login.css';
-import {Link} from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import { useNavigate } from "react-router-dom";
 
-function Form(){
+function Form() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
+    
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        
+        try {
+            const response = await axios.post('http://localhost:4000/login', { email, password });
+            console.log('Login successful:', response.data);
+            navigate('/'); 
+        } catch (error) {
+            console.error('Error during login:', error.response.data);
+            alert('Login failed. Please check your email and password.');
+        }
+    };
 
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        axios.get("http://localhost:4000/signups", { email, password })
-        .then(result => {
-            console.log(result);
-            if(result.data === "Success"){
-                navigate("/");
-            }else{
-                navigate("/signup");
-                alert("You are not registered to this service");
-            }
-        })
-        .catch(err => console.log(err));
-    }
-
-    return(
+    return (
         <div className="container">
-        <div className="form">
-            <div className="left"></div>
-
-            <div className="right">
-                <h1>Login</h1>
-                <form onSubmit={handleSubmit}>
-                <Field setEmail={setEmail} setPassword={setPassword} />
-                <button type="submit">Login</button>
-                </form>
-                <ForgotPass/>
-                <Dha/>
+            <div className="form">
+                <div className="left"></div>
+                <div className="right">
+                    <h1>Login</h1>
+                    <form onSubmit={handleSubmit}>
+                        <Field setEmail={setEmail} setPassword={setPassword} />
+                        <button type="submit">Login</button>
+                    </form>
+                    <ForgotPass />
+                    <Dha />
+                </div>
             </div>
         </div>
-        </div>
     );
 }
 
-function Field({setEmail, setPassword}){
-    return(
+function Field({ setEmail, setPassword }) {
+    return (
         <div className="fields">
-            <input type="email" id="email" name="email" placeholder="Mail" onChange={(e) =>setEmail(e.target.value)} required></input>
-            <br></br>
-            <input type="password" id="password" name="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} required></input>
+            <input type="email" id="email" name="email" placeholder="Mail" onChange={(e) => setEmail(e.target.value)} required/>
+            <br />
+            <input type="password" id="password" name="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} required/>
         </div>
     );
 }
 
-function ForgotPass(){
-    return(
+function ForgotPass() {
+    return (
         <p className="forgot">Forgot Password</p>
     );
 }
 
-function Dha(){
-    return(
+function Dha() {
+    return (
         <div className="dha">
             <p>Don't have an account</p>
             <Link to="/signup">Signup</Link>
@@ -69,10 +64,10 @@ function Dha(){
     );
 }
 
-export default function Login(){
-    return(
+export default function Login() {
+    return (
         <>
-        <Form/>
+            <Form />
         </>
     );
 }
