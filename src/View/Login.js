@@ -14,7 +14,7 @@ function Form() {
         try {
             const response = await axios.post('http://localhost:4000/login', { email, password });
             console.log('Login successful:', response.data);
-            navigate('/'); 
+            navigate('/adminPanel'); 
         } catch (error) {
             console.error('Error during login:', error.response.data);
             alert('Login failed. Please check your email and password.');
