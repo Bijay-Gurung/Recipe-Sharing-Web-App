@@ -31,7 +31,7 @@
     width: 200px;
     border-radius: 9px;
     border: none;
-    margin-top: 30px;
+    margin-top: 20px;
 }
 .createRecipe #recipe::placeholder{
     color: #000;
@@ -51,6 +51,14 @@
 }
 
 .createRecipe #date{
+    height: 30px;
+    width: 200px;
+    border-radius: 9px;
+    border: none;
+    margin-top: 10px;
+}
+
+.createRecipe #cookingTime{
     height: 30px;
     width: 200px;
     border-radius: 9px;
