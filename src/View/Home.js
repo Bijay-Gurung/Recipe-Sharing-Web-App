@@ -33,9 +33,9 @@ function Categories(){
                 <button>Click Here</button>
             </div> */}
 
-            <div className='dinner'>
+            <div className='meal'>
                 <div className='dimage'></div>
-                <h3>Dinner</h3>
+                <h3>Meal</h3>
                 <button>Click Here</button>
             </div>
 

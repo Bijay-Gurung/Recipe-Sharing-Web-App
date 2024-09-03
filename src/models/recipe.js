@@ -39,6 +39,10 @@ const recipe_Schema = new mongoose.Schema({
     details: {
         type: String,
         required: true,
+    },
+    category: {
+        type: String,
+        required: true,
     }
 });
 

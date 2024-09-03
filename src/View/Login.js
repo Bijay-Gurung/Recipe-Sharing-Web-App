@@ -42,7 +42,7 @@ function Form() {
                         <Field setEmail={setEmail} setPassword={setPassword} />
                         <button type="submit">Login</button>
                     </form>
-                    <ForgotPass />
+                    {/* <ForgotPass /> */}
                     <Dha />
                 </div>
             </div>
@@ -61,11 +61,11 @@ function Field({ setEmail, setPassword }) {
     );
 }
 
-function ForgotPass() {
-    return (
-        <p className="forgot">Forgot Password</p>
-    );
-}
+// function ForgotPass() {
+//     return (
+//         <p className="forgot">Forgot Password</p>
+//     );
+// }
 
 function Dha() {
     return (

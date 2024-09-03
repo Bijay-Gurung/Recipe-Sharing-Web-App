@@ -16,10 +16,10 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage: storage });
 
-// Create a new recipe route
+// Creating a new recipe route
 router.post('/', upload.single('image'), async (req, res) => {
     try {
-        const { recipe, author, date, cookingTime, nutInfo, ingredient, process, details } = req.body;
+        const { recipe, author, date, cookingTime, nutInfo, ingredient, process, details, category } = req.body;
         const imagePath = req.file ? req.file.path : '';
 
         const newRecipe = new Recipe({
@@ -31,6 +31,7 @@ router.post('/', upload.single('image'), async (req, res) => {
             ingredient,
             process,
             image: imagePath,  // Saving the path of the uploaded image
+            category,
             details
         });
 
