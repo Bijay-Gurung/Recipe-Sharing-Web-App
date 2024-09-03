@@ -102,3 +102,16 @@
     left: 350px;
     bottom: 350px;
 }
+
+.logout{
+    height: 30px;
+    width: 120px;
+    color: #fff;
+    background-color: #386050;
+    border-radius: 5px;
+    border: none;
+    text-decoration: none;
+    position: relative;
+    top: 20px;
+    left: 90%;
+}

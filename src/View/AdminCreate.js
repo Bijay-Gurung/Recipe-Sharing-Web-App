@@ -1,6 +1,14 @@
 import React, {useState} from "react";
 import axios from "axios";
 import './AdminCreate.css';
+import {Link} from "react-router-dom";
+
+function Logout(){
+    return(
+        <Link to="/" className="logout">Logout</Link>
+    );
+    
+}
 
 function Create(){
     const [recipe, setRecipe] = useState('');
@@ -64,6 +72,7 @@ function Create(){
 export default function CreateRecipe(){
     return(
         <>
+        <Logout />
         <Create />
         </>
     );

@@ -41,7 +41,6 @@ function Form() {
                         <Field setName={setName} setEmail={setEmail} setPassword={setPassword} />
                         <button type="submit">Signup</button>
                     </form>
-                    <ForgotPass />
                     <Aha />
                 </div>
             </div>
@@ -60,12 +59,6 @@ function Field({ setName, setEmail, setPassword }) {
             <input type="password" id="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} required/>
             <br />
         </div>
-    );
-}
-
-function ForgotPass() {
-    return (
-        <p className="forgot">Forgot Password</p>
     );
 }
 
