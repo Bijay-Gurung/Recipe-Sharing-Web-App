@@ -14,6 +14,7 @@ function Create(){
     const [recipe, setRecipe] = useState('');
     const [author, setAuthor] = useState('');
     const [date, setDate] = useState('');
+    const [cookingTime, setCookingTime] = useState('');
     const [nutInfo, setNutInfo] = useState('');
     const [ingredient, setIngredient] = useState('');
     const [process, setProcess] = useState('');
@@ -27,6 +28,7 @@ function Create(){
         formData.append('recipe', recipe);
         formData.append('author', author);
         formData.append('date', date);
+        formData.append('cookingTime', cookingTime);
         formData.append('nutInfo', nutInfo);
         formData.append('ingredient', ingredient);
         formData.append('process', process);
@@ -54,6 +56,7 @@ function Create(){
                     <input type="text" id="recipe" name="recipe" placeholder="Recipe Name" onChange={(e) => setRecipe(e.target.value)} required /><br/>
                     <input type="text" id="author" name="author" placeholder="Author Name" onChange={(e) => setAuthor(e.target.value)} required /><br/>
                     <input type="date" id="date" name="date" placeholder="Date" onChange={(e) => setDate(e.target.value)} required /><br/>
+                    <input type="text" id="cookingTime" name="cookingTime" placeholder="Cooking Time" onChange={(e) => setCookingTime(e.target.value)} required /><br/>
                     <textarea rows='5' cols='29' id="nutInfo" name="nutInfo" placeholder="Add Nutritional Info" onChange={(e) => setNutInfo(e.target.value)} required></textarea><br/>
                     <textarea rows='5' cols='29' id="process" name="process" placeholder="Add the process of recipe" onChange={(e) => setProcess(e.target.value)} required></textarea><br/>
                 </div>

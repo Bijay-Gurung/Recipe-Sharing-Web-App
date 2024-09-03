@@ -15,6 +15,11 @@ const recipe_Schema = new mongoose.Schema({
         type: Date,
         required: true,
     },
+    cookingTime: {
+        type: String,
+        required: true,
+    }
+    ,
     nutInfo: {
         type: String,
         required: true,
