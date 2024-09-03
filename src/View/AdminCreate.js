@@ -40,6 +40,7 @@ function Create(){
         })
         .then(result => {
             console.log(result);
+            alert("New Recipe has been created");
         })
         .catch(err => console.log(err));
     }

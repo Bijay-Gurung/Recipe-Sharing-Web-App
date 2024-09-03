@@ -2,19 +2,25 @@ import React, { useState } from "react";
 import './Login.css';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { ClipLoader } from "react-spinners";
 
 function Form() {
+    const [isLoading, setIsLoading] = useState(false);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
     
     const handleSubmit = async (e) => {
         e.preventDefault();
-        
+        setIsLoading(true);
+
         try {
             const response = await axios.post('http://localhost:4000/login', { email, password });
             console.log('Login successful:', response.data);
-            navigate('/adminPanel'); 
+            setTimeout(() =>{
+                setIsLoading(false);
+                navigate('/adminPanel'); 
+            },2000);
         } catch (error) {
             console.error('Error during login:', error.response.data);
             alert('Login failed. Please check your email and password.');
@@ -23,7 +29,12 @@ function Form() {
 
     return (
         <div className="container">
-            <div className="form">
+            {isLoading ? (
+                 <div className="loader-container">
+                    <ClipLoader size={43} color="black" />
+                    </div>
+            ) :(
+                <div className="form">
                 <div className="left"></div>
                 <div className="right">
                     <h1>Login</h1>
@@ -35,6 +46,7 @@ function Form() {
                     <Dha />
                 </div>
             </div>
+            )}
         </div>
     );
 }
