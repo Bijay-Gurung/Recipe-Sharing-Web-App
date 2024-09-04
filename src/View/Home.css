@@ -196,3 +196,10 @@ body{
 .footer{
     margin-top: 295px;
 }
+
+.loader-container{
+    position: relative;
+    left: 420px;
+    bottom: 600px;
+    z-index: 1;
+}

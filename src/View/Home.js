@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Nav from '../Component/Nav';
 import Footer from '../Component/Footer';
 import './Home.css';
 import '../Component/Footer.css';
 import {useNavigate} from 'react-router-dom';
-
+import { ClipLoader } from "react-spinners";
 
 function GroceryList(){
     return(
@@ -20,9 +20,16 @@ function GroceryList(){
 }
 
 function Categories(){
+    const [isLoading, setIsLoading] = useState(false);
     const navigate = useNavigate();
+
     function BtnOne(){
-        navigate("/breakfast");
+        setIsLoading(true);
+        setTimeout(()=>{
+            setIsLoading(false);
+            navigate("/breakfast");
+        },2000);
+        
     }
 
     return(
@@ -31,6 +38,13 @@ function Categories(){
                 <div className='bimage'></div>
                 <h3>Breakfast</h3>
                 <button onClick={BtnOne}>Click Here</button>
+                
+                {isLoading ? (
+                    <div className="loader-container">
+                        <ClipLoader size={63} color="black" />
+                    </div>
+                ) : (null)}
+                
             </div>
 
             {/* <div className='meal'>
