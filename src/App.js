@@ -5,6 +5,7 @@ import Login from './View/Login';
 import Home from './View/Home';
 import About from './View/About';
 import CreateRecipe from './View/AdminCreate';
+import Breakfast from './View/Breakfast';
 import ErrorPage from './View/ErrorPage';
 
 function App() {
@@ -29,6 +30,10 @@ function App() {
     {
       path: '/adminPanel',
       element: <CreateRecipe />
+    },
+    {
+      path: '/breakfast',
+      element: <Breakfast />
     }
   ]);
 

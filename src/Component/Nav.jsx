@@ -8,7 +8,7 @@ export default function Nav(){
     <div className="nav">
         <div className="logo"></div>
         <Link to="/" className="home">Home</Link>
-        <Link to="" className="recipes">Recipes</Link>
+        {/* <Link to="" className="recipes">Recipes</Link> */}
         <Link to="/about" className="aboutUs">About Us</Link>
         <Link to="" className="contactUs">Contact Us</Link>
         <Link to="/login" className='login'>Login</Link>

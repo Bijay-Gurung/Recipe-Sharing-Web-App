@@ -3,6 +3,7 @@ import Nav from '../Component/Nav';
 import Footer from '../Component/Footer';
 import './Home.css';
 import '../Component/Footer.css';
+import {useNavigate} from 'react-router-dom';
 
 
 function GroceryList(){
@@ -19,12 +20,17 @@ function GroceryList(){
 }
 
 function Categories(){
+    const navigate = useNavigate();
+    function BtnOne(){
+        navigate("/breakfast");
+    }
+
     return(
         <div className='Categories'>
             <div className='breakfast'>
                 <div className='bimage'></div>
                 <h3>Breakfast</h3>
-                <button>Click Here</button>
+                <button onClick={BtnOne}>Click Here</button>
             </div>
 
             {/* <div className='meal'>
