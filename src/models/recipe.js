@@ -46,5 +46,21 @@ const recipe_Schema = new mongoose.Schema({
     }
 });
 
+// Create a text index on the 'category' field
+recipe_Schema.schema.index({category: 'text'});
+
+// Usage
+recipe_Schema.find({$text: {$search: 'Breakfast'}}).exec((err, recipe_Schema) => {
+    console.log(recipe_Schema);
+});
+
+recipe_Schema.find({$text: {$search: 'Meal'}}).exec((err, recipe_Schema) => {
+    console.log(recipe_Schema);
+})
+
+recipe_Schema.find({$text: {$search: 'Dessert'}}).exec((err, recipe_Schema) => {
+    console.log(recipe_Schema);
+})
+
 // creating new Collection
 module.exports = mongoose.model("Recipe", recipe_Schema);

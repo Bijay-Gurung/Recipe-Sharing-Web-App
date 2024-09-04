@@ -4,3 +4,34 @@
     box-sizing: border-box;
     font-family: 'Poppins',sans-serif;
 }
+
+.loader-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.searchDiv{
+    position: relative;
+    top: 30px;
+    left:500px;
+    display: flex;
+}
+
+.searchDiv input{
+    height: 30px;
+    width: 200px;
+    border: none;
+    border-radius: 9px;
+    padding-left: 10px;
+}
+
+.searchDiv input::placeholder{
+    color: #000;
+    opacity: 1;
+}
+
+.searchDiv button{
+    margin-left: 50px;
+}
