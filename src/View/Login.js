@@ -30,7 +30,7 @@ function Form() {
     return (
         <div className="container">
             {isLoading ? (
-                 <div className="loader-container">
+                 <div className="loaderContainer">
                     <ClipLoader size={43} color="black" />
                     </div>
             ) :(

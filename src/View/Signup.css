@@ -95,7 +95,7 @@ body{
     font-size: large;
 }
 
-.loader-container{
+.LoaderContainer{
     display: flex;
     align-items: center;
     justify-content: center;

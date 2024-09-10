@@ -94,7 +94,7 @@ button{
     font-size: large;
 }
 
-.loader-container{
+.loaderContainer{
     display: flex;
     align-items: center;
     justify-content: center;
