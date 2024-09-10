@@ -20,7 +20,7 @@ function Create(){
     const [process, setProcess] = useState('');
     const [image, setImage] = useState('');
     const [details, setDetails] = useState('');
-    const [category, setCategory] = useState('');
+    const [category, setCategory] = useState('Breakfast');
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -66,9 +66,9 @@ function Create(){
                 <div className="right">
                     <input type="file" id="recipeImage" name="recipeImage" placeholder="Upload Recipe Image" onChange={(e) => setImage(e.target.files[0])} required /><br/>
                     <select name="category" id="category" onChange={(e) => setCategory(e.target.value)} required>
-                        <option>Breakfast</option>
-                        <option>Meal</option>
-                        <option>Dessert</option>
+                        <option value="Breakfast">Breakfast</option>
+                        <option value="Meal">Meal</option>
+                        <option value="Dessert">Dessert</option>
                     </select><br/>
                     <textarea rows='5' cols='29' id="details" name="details" placeholder="Write your recipe details here" onChange={(e) => setDetails(e.target.value)} required></textarea><br/>
                     <textarea rows='5' cols='29' id="ingredient" name="ingredient" placeholder="Add Ingredient" onChange={(e) => setIngredient(e.target.value)} required></textarea><br/>
