@@ -9,7 +9,14 @@ import { ClipLoader } from "react-spinners";
 function GroceryList(){
     return(
         <div className='GroceryList'>
-            <div className='Left'></div>
+            <div className='Left'>
+                <div className='box box1'></div>
+                <div className='box box2'></div>
+                <div className='box box3'></div>
+                <div className='box box4'></div>
+                <div className='box box5'></div>
+                <div className='box box6'></div>
+            </div>
             <div className='Right'>
                 <h1>Grocery List</h1> {/* Cherry Bomb */}
                 <p>Look for your Grocery Item</p>

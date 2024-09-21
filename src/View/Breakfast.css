@@ -13,25 +13,23 @@
 }
 
 .searchDiv{
-    position: relative;
-    top: 30px;
-    left:500px;
-    display: flex;
+    margin-top: 25px;
 }
 
-.searchDiv input{
+.searchDiv #search{
     height: 30px;
-    width: 200px;
+    width: 220px;
+    margin-left: 39%;
     border: none;
     border-radius: 9px;
     padding-left: 10px;
 }
 
-.searchDiv input::placeholder{
-    color: #000;
-    opacity: 1;
-}
-
 .searchDiv button{
-    margin-left: 50px;
+    height: 30px;
+    width: 100px;
+    background-color: #386050;
+    color: #fff;
+    position: relative;
+    right: 120px;
 }

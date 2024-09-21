@@ -67,7 +67,78 @@ body{
 }
 .GroceryList .Left{
     width: 60%;
+    display: grid;
+    grid-template-columns: repeat(10,30px);
+    grid-template-rows: repeat(6,30px);
 }
+
+.GroceryList .Left .box{
+    height: 60px;
+    width: 60px;
+    border: none;
+    border-radius: 9px;
+}
+
+.GroceryList .Left .box1{
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 2;
+    grid-column-end: 4;
+    background-image: url("/Fruits.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+.GroceryList .Left .box2{
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 5;
+    grid-column-end: 7;
+    background-image: url("/meat.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+.GroceryList .Left .box3{
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 8;
+    grid-column-end: 10;
+    background-image: url("/canned\ goods.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+.GroceryList .Left .box4{
+    grid-row-start: 5;
+    grid-row-end: 6;
+    grid-column-start: 2;
+    grid-column-end: 4;
+    background-image: url("/Dairy.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+.GroceryList .Left .box5{
+    grid-row-start: 5;
+    grid-row-end: 6;
+    grid-column-start: 5;
+    grid-column-end: 7;
+    background-image: url("/Condiment.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+.GroceryList .Left .box6{
+    grid-row-start: 5;
+    grid-row-end: 6;
+    grid-column-start: 8;
+    grid-column-end: 10;
+    background-image: url("/Grains.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
 .GroceryList .Right{
     width: 40%;
     color: #6A4104;
