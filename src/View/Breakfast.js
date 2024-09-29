@@ -1,52 +1,88 @@
-// import React from "react";
-import React, {useState} from "react";
+import React, { useState, useEffect } from "react";
 import './Breakfast.css';
 import Nav from "../Component/Nav";
 import axios from 'axios';
 import { ClipLoader } from "react-spinners";
-// import {Link, useNavigate} from 'react-router-dom';
 
-function Search(){
+function Search() {
     const [isLoading, setIsLoading] = useState(false);
     const [isSearch, setIsSearch] = useState('');
-    const handleSubmit = async(e) => {
+    const [searchResults, setSearchResults] = useState([]);
+
+    const handleSubmit = async (e) => {
         e.preventDefault();
         setIsLoading(true);
-        try{
-            const response = axios.post("http://localhost:4000/recipes", {isSearch});
-            console.log('The recipe you are searching is found.', response.data);
-            setTimeout(()=>{
-                setIsSearch(false);
-            },2000);
-        } catch(error){
-            console.error('Error while searching recipe', error.response.data);
-            alert("Recipe is not found");
+
+        try {
+            const response = await axios.post("http://localhost:4000/recipes/search", { isSearch });
+            console.log('The recipe you are searching for is found.', response.data);
+
+            setSearchResults(response.data);
+            setIsLoading(false);
+        } catch (error) {
+            console.error('Error while searching recipe', error.response?.data || error);
+            alert("Recipe not found");
+            setIsLoading(false);
         }
+    };
 
-    }
-
-    return(
+    return (
         <div className="searchDiv">
             {isLoading ? (
                 <div className="loader-container">
                     <ClipLoader size={43} color="black" />
                 </div>
-            ) : (null) // here, i have to replace null and put the recipes div
-            }
+            ) : (
+                <div>
+                    {searchResults.length > 0 && (
+                        <ul>
+                            {searchResults.map((result, index) => (
+                                <li key={index}>{result.recipe} | {result.author}</li>
+                            ))}
+                        </ul>
+                    )}
+                </div>
+            )}
 
             <form onSubmit={handleSubmit}>
                 <input type="text" id="search" name="search" placeholder="Search..." onChange={(e) => setIsSearch(e.target.value)} required />
-                <button type="submit">search</button>
+                <button type="submit">Search</button>
             </form>
         </div>
     );
 }
 
-export default function Breakfast(){
-    return(
+function FetchData() {
+    const [records, setRecords] = useState([]);
+
+    useEffect(() => {
+        fetch('http://localhost:4000/recipes')
+            .then(response => response.json())
+            // .then(data => setRecords(data)) to display all data
+            .then(data => {
+                const filterRecords = data.filter(list => list.category === 'Breakfast');
+                setRecords(filterRecords);
+            })
+            .catch(err => console.log(err));
+    }, []);
+
+    return (
+        <div>
+            <ul>
+                {records.map((list, index) => (
+                    <li key={index}>{list.recipe} | {list.author}</li>
+                ))}
+            </ul>
+        </div>
+    );
+}
+
+export default function Breakfast() {
+    return (
         <div>
             <Nav />
             <Search />
+            <FetchData />
         </div>
     );
 }
