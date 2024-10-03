@@ -7,6 +7,7 @@ import About from './View/About';
 import CreateRecipe from './View/AdminCreate';
 import Breakfast from './View/Breakfast';
 import Meal from './View/Meal';
+import Dessert from './View/Dessert';
 import ErrorPage from './View/ErrorPage';
 
 function App() {
@@ -39,6 +40,10 @@ function App() {
     {
       path: '/meal',
       element: <Meal />
+    },
+    {
+      path: '/dessert',
+      element: <Dessert />
     }
   ]);
 

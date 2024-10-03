@@ -46,6 +46,14 @@ function Categories(){
         },2000);
     }
 
+    function BtnThree(){
+        setIsLoading(true);
+        setTimeout(() => {
+            setIsLoading(false);
+            navigate("/dessert");
+        },2000);
+    }
+
     return(
         <div className='Categories'>
             <div className='breakfast'>
@@ -76,7 +84,7 @@ function Categories(){
             <div className='dessert'>
                 <div className='deimage'></div>
                 <h3>Dessert</h3>
-                <button>Click Here</button>
+                <button onClick={BtnThree}>Click Here</button>
             </div>
         </div>
     )

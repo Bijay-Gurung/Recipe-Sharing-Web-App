@@ -1,0 +1,107 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+
+.loader-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.searchDiv{
+    margin-top: 25px;
+}
+
+.searchDiv #search{
+    height: 30px;
+    width: 220px;
+    margin-left: 39%;
+    border: none;
+    border-radius: 9px;
+    padding-left: 10px;
+}
+
+.searchDiv button{
+    height: 30px;
+    width: 100px;
+    background-color: #386050;
+    color: #fff;
+    position: relative;
+    right: 120px;
+}
+
+.recipeSection{
+    height: auto;
+    width: 80%;
+    position: relative;
+    top: 60px;
+    left: 120px;
+    display: grid;
+    grid-template-columns: repeat(3, 0.2fr);
+    gap: 20px;
+    box-sizing: border-box;
+}
+
+.recipeCard{
+    height: 200px;
+    width: 100%;
+    display: flex;
+    border-radius: 9px;
+    background-color: #ffffff05;
+    -webkit-backdrop-filter: blur(25px);
+    backdrop-filter: blur(10px);
+    box-shadow: 4px 4px 4px #595959;
+}
+
+.recipeCard .left{
+    width: 40%;
+}
+
+.recipeCard .left img{
+    border-top-left-radius: 9px;
+    border-bottom-left-radius: 9px;
+    background-size: cover;
+    background-position: center;
+}
+
+.recipeCard .right{
+    width: 60%;
+}
+
+.recipeCard .right h2{
+    font-size: large;
+    font-weight: 600;
+    text-align: center;
+    padding-right: 50px;
+}
+
+.recipeCard .right h3{
+    font-size: medium;
+    font-weight: 500;
+    padding-left: 10px;
+}
+
+.recipeCard .right .date{
+    padding-left: 10px;
+}
+
+.recipeCard .right .cookingTime{
+    margin-left: 30px;
+}
+
+.recipeCard .right .cookingTime .title{
+    text-decoration: underline;
+}
+
+.recipeCard .right .cookingTime .time{
+    padding-left: 35px;
+}
+
+.recipeCard .right .view{
+    position: relative;
+    right: 120px;
+}
