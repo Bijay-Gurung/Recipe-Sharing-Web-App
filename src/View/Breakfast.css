@@ -5,6 +5,8 @@
     font-family: 'Poppins',sans-serif;
 }
 
+
+
 .loader-container{
     display: flex;
     align-items: center;
@@ -36,18 +38,20 @@
 
 .recipeSection{
     height: auto;
-    width: 100%;
-    background-color: aquamarine;
+    width: 80%;
     position: relative;
     top: 60px;
-    display: flex;
+    left: 120px;
+    display: grid;
+    grid-template-columns: repeat(3, 0.2fr);
+    gap: 20px;
+    box-sizing: border-box;
 }
 
 .recipeCard{
     height: 200px;
-    width: 300px;
+    width: 100%;
     display: flex;
-    margin-left: 40px;
     border-radius: 9px;
     background-color: #ffffff05;
     -webkit-backdrop-filter: blur(25px);
@@ -62,6 +66,8 @@
 .recipeCard .left img{
     border-top-left-radius: 9px;
     border-bottom-left-radius: 9px;
+    background-size: cover;
+    background-position: center;
 }
 
 .recipeCard .right{

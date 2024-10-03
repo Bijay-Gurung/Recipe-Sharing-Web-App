@@ -77,7 +77,7 @@ function FetchData() {
             {records.map((list, index) => (
                 <div key={index} className="recipeCard">
                     <div className="left">
-                        <img src={`http://localhost:4000/${list.image.replace(/\\/g, '/')}`} alt="Recipe pic" height="200px" width="120px" length="100px" />
+                        <img src={`http://localhost:4000/${list.image.replace(/\\/g, '/')}`} alt="Recipe pic" height="200px" width="130px" length="100px" />
                     </div>
 
                     <div className="right">

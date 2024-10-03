@@ -7,7 +7,7 @@
 
 body{
     background: linear-gradient(180deg, #FFEB8A 0%, #AFB638 36.35%, #386050 100%);
-    height: 935px;
+    height: auto;
 }
 
 .nav{
