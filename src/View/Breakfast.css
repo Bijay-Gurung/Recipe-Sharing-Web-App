@@ -36,19 +36,68 @@
 
 .recipeSection{
     height: auto;
-    width: 80%;
+    width: 100%;
     background-color: aquamarine;
     position: relative;
-    top: 30px;
-    left: 100px;
-    display: grid;
-    grid-template-rows: repeat(8,90px);
-    grid-template-columns: repeat(14,90px);
+    top: 60px;
+    display: flex;
 }
 
 .recipeCard{
     height: 200px;
-    width: 200px;
-    background-color: red;
-    
+    width: 300px;
+    display: flex;
+    margin-left: 40px;
+    border-radius: 9px;
+    background-color: #ffffff05;
+    -webkit-backdrop-filter: blur(25px);
+    backdrop-filter: blur(10px);
+    box-shadow: 4px 4px 4px #595959;
+}
+
+.recipeCard .left{
+    width: 40%;
+}
+
+.recipeCard .left img{
+    border-top-left-radius: 9px;
+    border-bottom-left-radius: 9px;
+}
+
+.recipeCard .right{
+    width: 60%;
+}
+
+.recipeCard .right h2{
+    font-size: large;
+    font-weight: 600;
+    text-align: center;
+    padding-right: 50px;
+}
+
+.recipeCard .right h3{
+    font-size: medium;
+    font-weight: 500;
+    padding-left: 10px;
+}
+
+.recipeCard .right .date{
+    padding-left: 10px;
+}
+
+.recipeCard .right .cookingTime{
+    margin-left: 30px;
+}
+
+.recipeCard .right .cookingTime .title{
+    text-decoration: underline;
+}
+
+.recipeCard .right .cookingTime .time{
+    padding-left: 35px;
+}
+
+.recipeCard .right .view{
+    position: relative;
+    right: 120px;
 }

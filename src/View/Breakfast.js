@@ -77,13 +77,13 @@ function FetchData() {
             {records.map((list, index) => (
                 <div key={index} className="recipeCard">
                     <div className="left">
-                        <img src={`http://localhost:4000/${list.image.replace(/\\/g, '/')}`} alt="Recipe pic" length="100px" width="100px" />
+                        <img src={`http://localhost:4000/${list.image.replace(/\\/g, '/')}`} alt="Recipe pic" height="200px" width="120px" length="100px" />
                     </div>
 
                     <div className="right">
                         <h2 className="recipe">{list.recipe}</h2>
                         <h3 className="author">{list.author}</h3>
-                        <p className="date">{list.date}</p>
+                        <p className="date">{new Date(list.date).toLocaleDateString()}</p>
                         <div className="cookingTime">
                             <p className="title">Cooking Time</p>
                             <p className="time">{list.cookingTime}</p>
