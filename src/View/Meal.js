@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import './Breakfast.css';
+import './Meal.css';
 import Nav from "../Component/Nav";
 import axios from 'axios';
 import { ClipLoader } from "react-spinners";
@@ -58,9 +58,8 @@ function FetchData() {
     useEffect(() => {
         fetch('http://localhost:4000/recipes')
             .then(response => response.json())
-            // .then(data => setRecords(data)) to display all data
             .then(data => {
-                const filterRecords = data.filter(list => list.category === 'Breakfast');
+                const filterRecords = data.filter(list => list.category === 'Meal');
                 setRecords(filterRecords);
             })
             .catch(err => console.log(err));
@@ -68,11 +67,6 @@ function FetchData() {
 
     return (
         <div className="recipeSection">
-            {/* <ul>
-                {records.map((list, index) => (
-                    <li key={index}>{list.recipe} | {list.author}</li>
-                ))}
-            </ul> */}
 
             {records.map((list, index) => (
                 <div key={index} className="recipeCard">
@@ -96,7 +90,7 @@ function FetchData() {
     );
 }
 
-export default function Breakfast() {
+export default function Meal() {
     return (
         <div>
             <Nav />

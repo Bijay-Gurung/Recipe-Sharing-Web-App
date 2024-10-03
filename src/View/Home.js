@@ -36,7 +36,14 @@ function Categories(){
             setIsLoading(false);
             navigate("/breakfast");
         },2000);
-        
+    }
+
+    function BtnTwo(){
+        setIsLoading(true);
+        setTimeout(()=>{
+            setIsLoading(false);
+            navigate("/meal");
+        },2000);
     }
 
     return(
@@ -63,7 +70,7 @@ function Categories(){
             <div className='meal'>
                 <div className='dimage'></div>
                 <h3>Meal</h3>
-                <button>Click Here</button>
+                <button onClick={BtnTwo}>Click Here</button>
             </div>
 
             <div className='dessert'>
