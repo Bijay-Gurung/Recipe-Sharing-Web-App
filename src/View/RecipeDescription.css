@@ -2,4 +2,53 @@
     padding: 0px;
     margin: 0px;
     box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+
+.recipeDescription{
+    height: auto;
+    width: 100%;
+    background-color: purple;
+}
+
+.recipeDescription .details{
+    height: auto;
+    width: 80%;
+    background-color: pink;
+    border-radius: 9px;
+    position: relative;
+    top: 90px;
+    left: 90px;
+}
+
+.recipeDescription .details h2{
+    font-weight: 400;
+    padding-left: 15px;
+    text-decoration: underline;
+}
+
+.recipeDescription .details .content{
+    height: 120px;
+    width: 100%;
+    background-color: #386050;
+    display: flex;
+    border-radius: 9px;
+}
+
+.recipeDescription .details .content .left{
+    width: 40%;
+}
+.recipeDescription .details .content .left .recipeImage{
+    height: 120px;
+    width: 120px;
+    border-radius: 90px;
+    background-image: url("/Fruits.jpg");
+    background-position: center;
+    background-size: cover;
+    margin-left: 40px;
+}
+
+.recipeDescription .details .content .right{
+    width: 60%;
+    color: #fff;
 }

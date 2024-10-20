@@ -7,12 +7,17 @@ function Content(){
     return(
         <div className="recipeDescription">
             <div className="details">
-                <div className="left"></div>
+                <h2>Details</h2>
+                <div className="content">
+                    <div className="left">
+                        <div className="recipeImage"></div>
+                    </div>
 
-                <div className="right">
-                <p>A type of bread flavored with garlic and butter. The garlic and butter usually spread onto bread that has already
-                 been baked rather than being incorporated into bread dough. The type of bread most often used when preparing garlic
-                  bread are a basic french baguette  or baton or a long Italian white loaf.</p>
+                    <div className="right">
+                        <p>A type of bread flavored with garlic and butter. The garlic and butter usually spread onto bread that has already
+                            been baked rather than being incorporated into bread dough. The type of bread most often used when preparing garlic
+                            bread are a basic french baguette  or baton or a long Italian white loaf.</p>
+                    </div>
                 </div>
             </div>
 
