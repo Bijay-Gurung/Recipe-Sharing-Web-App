@@ -8,6 +8,7 @@ import CreateRecipe from './View/AdminCreate';
 import Breakfast from './View/Breakfast';
 import Meal from './View/Meal';
 import Dessert from './View/Dessert';
+import RecipeDescription from './View/RecipeDescription';
 import ErrorPage from './View/ErrorPage';
 
 function App() {
@@ -44,6 +45,10 @@ function App() {
     {
       path: '/dessert',
       element: <Dessert />
+    },
+    {
+      path: '/recipeDescription',
+      element: <RecipeDescription />
     }
   ]);
 
