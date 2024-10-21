@@ -5,19 +5,21 @@
     font-family: 'Poppins',sans-serif;
 }
 
+body{
+    height: auto;
+}
+
 .recipeDescription{
     height: auto;
     width: 100%;
-    background-color: purple;
 }
 
 .recipeDescription .details{
     height: auto;
     width: 80%;
-    background-color: pink;
     border-radius: 9px;
     position: relative;
-    top: 90px;
+    top: 30px;
     left: 90px;
 }
 
@@ -25,14 +27,15 @@
     font-weight: 400;
     padding-left: 15px;
     text-decoration: underline;
+    font-size: larger;
 }
 
 .recipeDescription .details .content{
     height: 120px;
     width: 100%;
-    background-color: #386050;
     display: flex;
     border-radius: 9px;
+    margin-top: 10px;
 }
 
 .recipeDescription .details .content .left{
@@ -45,10 +48,120 @@
     background-image: url("/Fruits.jpg");
     background-position: center;
     background-size: cover;
-    margin-left: 40px;
+    margin-left: 80px;
 }
 
 .recipeDescription .details .content .right{
     width: 60%;
     color: #fff;
+    background-color: #386050;
+    border-radius: 9px;
+    padding: 9px;
+}
+
+
+.recipeDescription .nutritionalInfo{
+    height: auto;
+    width: 80%;
+    border-radius: 9px;
+    position: relative;
+    top: 90px;
+    left: 90px;
+}
+
+.recipeDescription .nutritionalInfo h2{
+    font-weight: 400;
+    padding-left: 15px;
+    text-decoration: underline;
+    font-size: larger;
+}
+
+.recipeDescription .nutritionalInfo .content{
+    height: 120px;
+    width: 100%;
+    display: flex;
+    border-radius: 9px;
+    margin-top: 10px;
+    justify-content: space-between;
+}
+
+.recipeDescription .nutritionalInfo .content .left{
+    width: 40%;
+}
+
+.recipeDescription .nutritionalInfo .content .left .section{
+    width: 320px;
+    background-color: #386050;
+    color: #fff;
+    border-radius: 9px;
+    padding-left: 15px;
+    margin-left: 20px;
+}
+
+ul li{
+    list-style: none;
+}
+
+.recipeDescription .nutritionalInfo .content .right{
+    width: 60%;
+}
+
+.recipeDescription .nutritionalInfo .content .right .section{
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+    background-color: #386050;
+    border-radius: 9px;
+    width: 700px;
+    padding: 10px;
+}
+
+.recipeDescription .ingredient{
+    height: auto;
+    width: 80%;
+    position: relative;
+    top: 140px;
+    left: 40px;
+}
+
+.recipeDescription .ingredient h2{
+    font-weight: 400;
+    text-decoration: underline;
+    font-size: larger;
+}
+
+.recipeDescription .ingredient .content{
+    background-color: #386050;
+    border-radius: 9px;
+    margin-top: 10px;
+}
+
+.recipeDescription .ingredient p{
+    color: #fff;
+}
+
+.recipeDescription .processes{
+    height: auto;
+    width: 80%;
+    position: relative;
+    top: 190px;
+    left: 40px;
+}
+
+.recipeDescription .processes h2{
+    font-weight: 400;
+    text-decoration: underline;
+    font-size: larger;
+}
+
+.recipeDescription .processes .content{
+    background-color: #386050;
+    color: #fff;
+    border-radius: 9px;
+    width: 1100px;
+    margin-top: 10px;
+}
+
+.recipeDescription .processes .content ol{
+    padding-left: 30px;
 }
