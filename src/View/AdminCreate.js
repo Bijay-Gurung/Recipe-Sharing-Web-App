@@ -51,9 +51,10 @@ function Create(){
     
 
     return(
-        <div className="createRecipe">
-            <h1>New Recipe</h1>
-            <form onSubmit={handleSubmit} encType="multipart/form-data">
+        <div className="container">
+            <div className="createRecipe">
+                <h1>New Recipe</h1>
+                <form onSubmit={handleSubmit} encType="multipart/form-data">
                 <div className="left">
                     <input type="text" id="recipe" name="recipe" placeholder="Recipe Name" onChange={(e) => setRecipe(e.target.value)} required /><br/>
                     <input type="text" id="author" name="author" placeholder="Author Name" onChange={(e) => setAuthor(e.target.value)} required /><br/>
@@ -75,6 +76,7 @@ function Create(){
                     <button type="submit">Create</button>
                 </div>
             </form>
+        </div>
         </div>
     );
     
