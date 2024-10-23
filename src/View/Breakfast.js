@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import './Breakfast.css';
 import Nav from "../Component/Nav";
 import axios from 'axios';
@@ -54,6 +55,7 @@ function Search() {
 
 function FetchData() {
     const [records, setRecords] = useState([]);
+    const navigate = useNavigate();
 
     useEffect(() => {
         fetch('http://localhost:4000/recipes')
@@ -65,6 +67,10 @@ function FetchData() {
             })
             .catch(err => console.log(err));
     }, []);
+
+    function View(){
+        navigate("/recipeDescription");
+    }
 
     return (
         <div className="recipeSection">
@@ -88,7 +94,7 @@ function FetchData() {
                             <p className="title">Cooking Time</p>
                             <p className="time">{list.cookingTime}</p>
                         </div>
-                        <button className="view">view all</button>
+                        <button className="view" onClick={View}>view all</button>
                     </div>
                 </div>
             ))}
