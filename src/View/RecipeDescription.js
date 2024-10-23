@@ -1,22 +1,37 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import './RecipeDescription.css';
 import Nav from "../Component/Nav";
 import Footer from "../Component/Footer";
 
 function Content(){
+    const [records, setRecords] = useState([]);
+
+    useEffect(() => {
+        fetch('http://localhost:4000/recipes')
+            .then(response => response.json())
+            // .then(data => setRecords(data)) to display all data
+            .then(data => {
+                const filterRecords = data.filter(list => list.category === 'Breakfast');
+                setRecords(filterRecords);
+            })
+            .catch(err => console.log(err));
+    }, []);
+
     return(
-        <div className="recipeDescription">
+        <>
+        {records.map((list, index) =>(
+            <div className="recipeDescription" key={index}>
             <div className="details">
                 <h2>Details</h2>
                 <div className="content">
                     <div className="left">
-                        <div className="recipeImage"></div>
+                        <div className="recipeImage">
+                            <img src={`http://localhost:4000/${list.image.replace(/\\/g, '/')}`} alt="Recipe pic" height="200px" width="130px" length="100px" />
+                        </div>
                     </div>
 
                     <div className="right">
-                        <p>A type of bread flavored with garlic and butter. The garlic and butter usually spread onto bread that has already
-                            been baked rather than being incorporated into bread dough. The type of bread most often used when preparing garlic
-                            bread are a basic french baguette  or baton or a long Italian white loaf.</p>
+                        <p>{list.details}</p>
                     </div>
                 </div>
             </div>
@@ -27,9 +42,7 @@ function Content(){
                     <div className="left">
                         <div className="section">
                             <ul>
-                                <li>Serving size 1 slice (72g/2.6oz)</li>
-                                <li>Serving per container 3</li>
-                                <li>Amount per serving (% daily values)</li>
+                                <li>{list.nutInfo}</li>
                             </ul>
                         </div>
                     </div>
@@ -70,8 +83,7 @@ function Content(){
             <div className="ingredient">
                 <h2>Ingredient</h2>
                 <div className="content">
-                    <p>Organic Bread (organic wheat flour, water, yeast & salt) butter (pasteurized rbst free cream [milk], salt), fresh garlic, roasted
-                        garlic, fresh basil, whole milk mozzarella (cultured pasteurized whole milk, salt, enzymes)</p>
+                    <p>{list.ingredient}</p>
                 </div>
                 
             </div>
@@ -80,15 +92,13 @@ function Content(){
                 <h2>Processes</h2>
                 <div className="content">
                     <ol>
-                        <li>Preheat oven to 450 degree.</li>
-                        <li>Remove bread from packaging and place on baking sheet.</li>
-                        <li>When oven is hot, place garlic bread on middle rack of oven and bake until cheese is just melted and
-                        started to brown and bubble, approximately 6 to 8 minutes.</li>
-                        <li>Caution: cheese will be hot, let cool slightly.</li>
+                        <li>{list.process}</li>
                     </ol>
                 </div>
             </div>
-        </div>
+        </div>     
+            ))};
+        </>
     );
 }
 
