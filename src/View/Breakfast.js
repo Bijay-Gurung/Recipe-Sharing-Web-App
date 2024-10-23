@@ -68,8 +68,8 @@ function FetchData() {
             .catch(err => console.log(err));
     }, []);
 
-    function View(){
-        navigate("/recipeDescription");
+    function View(recipe){
+        navigate("/recipeDescription", {state: {recipe}});
     }
 
     return (
@@ -94,7 +94,7 @@ function FetchData() {
                             <p className="title">Cooking Time</p>
                             <p className="time">{list.cookingTime}</p>
                         </div>
-                        <button className="view" onClick={View}>view all</button>
+                        <button className="view" onClick={() => View(list)}>view all</button>
                     </div>
                 </div>
             ))}

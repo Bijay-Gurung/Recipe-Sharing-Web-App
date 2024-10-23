@@ -1,81 +1,43 @@
-import React, {useState, useEffect} from "react";
+import React from "react";
 import './RecipeDescription.css';
 import Nav from "../Component/Nav";
 import Footer from "../Component/Footer";
+import { useLocation } from 'react-router-dom';
 
-function Content(){
-    const [records, setRecords] = useState([]);
+function Content() {
+    const location = useLocation();
+    const { recipe } = location.state;
 
-    useEffect(() => {
-        fetch('http://localhost:4000/recipes')
-            .then(response => response.json())
-            // .then(data => setRecords(data)) to display all data
-            .then(data => {
-                const filterRecords = data.filter(list => list.category === 'Breakfast');
-                setRecords(filterRecords);
-            })
-            .catch(err => console.log(err));
-    }, []);
-
-    return(
-        <>
-        {records.map((list, index) =>(
-            <div className="recipeDescription" key={index}>
+    return (
+        <div className="recipeDescription">
             <div className="details">
                 <h2>Details</h2>
                 <div className="content">
                     <div className="left">
                         <div className="recipeImage">
-                            <img src={`http://localhost:4000/${list.image.replace(/\\/g, '/')}`} alt="Recipe pic" height="200px" width="130px" length="100px" />
+                            <img src={`http://localhost:4000/${recipe.image.replace(/\\/g, '/')}`} alt="Recipe pic" height="200px" width="130px" length="100px" />
                         </div>
                     </div>
 
                     <div className="right">
-                        <p>{list.details}</p>
+                        <p>{recipe.details}</p>
                     </div>
                 </div>
             </div>
 
             <div className="nutritionalInfo">
-            <h2>Nutritional Info</h2>
+                <h2>Nutritional Info</h2>
                 <div className="content">
                     <div className="left">
                         <div className="section">
                             <ul>
-                                <li>{list.nutInfo}</li>
+                                <li>{recipe.nutInfo}</li>
                             </ul>
                         </div>
                     </div>
-                    
+
                     <div className="right">
-                        <div className="section">
-                            <div className="c1">
-                                <ul>
-                                    <li>Calories 270</li>
-                                    <li>Calories from fat 110</li>
-                                    <li>Total fat 12g (18%)</li>
-                                    <li>Saturated fat 7g (34%)</li>
-                                </ul>
-                            </div>
-
-                            <div className="c2">
-                                <ul>
-                                    <li>Trans fat 0g</li>
-                                    <li>Cholesterol 35mg (11%)</li>
-                                    <li>Sodium 420mg (18%)</li>
-                                    <li>Total Carbohydrate 31g (10%)</li>
-                                </ul>
-                            </div>
-
-                            <div className="c3">
-                                <ul>
-                                    <li>Dietary fiber 2g (9%)</li>
-                                    <li>Sugar 2g</li>
-                                    <li>Protien 10g</li>
-                                </ul>
-                            </div>
-                            
-                        </div>
+                        {/* Nutritional data */}
                     </div>
                 </div>
             </div>
@@ -83,24 +45,22 @@ function Content(){
             <div className="ingredient">
                 <h2>Ingredient</h2>
                 <div className="content">
-                    <p>{list.ingredient}</p>
+                    <p>{recipe.ingredient}</p>
                 </div>
-                
             </div>
 
             <div className="processes">
                 <h2>Processes</h2>
                 <div className="content">
                     <ol>
-                        <li>{list.process}</li>
+                        <li>{recipe.process}</li>
                     </ol>
                 </div>
             </div>
-        </div>     
-            ))};
-        </>
+        </div>
     );
 }
+
 
 export default function RecipeDescription(){
     return(
