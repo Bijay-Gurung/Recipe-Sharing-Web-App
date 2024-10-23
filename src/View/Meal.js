@@ -3,6 +3,7 @@ import './Meal.css';
 import Nav from "../Component/Nav";
 import axios from 'axios';
 import { ClipLoader } from "react-spinners";
+import { useNavigate } from "react-router-dom";
 
 function Search() {
     const [isLoading, setIsLoading] = useState(false);
@@ -54,6 +55,7 @@ function Search() {
 
 function FetchData() {
     const [records, setRecords] = useState([]);
+    const navigate = useNavigate();
 
     useEffect(() => {
         fetch('http://localhost:4000/recipes')
@@ -65,6 +67,9 @@ function FetchData() {
             .catch(err => console.log(err));
     }, []);
 
+    function View(recipe){
+        navigate("/recipeDescription", {state: {recipe}});
+    }
     return (
         <div className="recipeSection">
 
@@ -82,7 +87,7 @@ function FetchData() {
                             <p className="title">Cooking Time</p>
                             <p className="time">{list.cookingTime}</p>
                         </div>
-                        <button className="view">view all</button>
+                        <button className="view" onClick={() => View(list)}>view all</button>
                     </div>
                 </div>
             ))}
