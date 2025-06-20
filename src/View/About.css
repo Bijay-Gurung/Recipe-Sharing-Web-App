@@ -7,7 +7,7 @@
 .content .image{
     height: 385px;
     width: 280px;
-    background-image: url("/Meal One.jpg");
+    background-image: url('/public/Meal\ One.jpg');
     background-position: center;
     background-size: cover;
     border-radius: 9px;
